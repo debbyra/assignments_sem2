@@ -28,11 +28,12 @@ class ProductDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 243, 242, 241),
+        backgroundColor: Color.fromARGB(255, 248, 247, 247),
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 3, 9, 65),
-          titleTextStyle:
-              const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          titleTextStyle: const TextStyle(
+              color: Color.fromARGB(255, 253, 252, 252),
+              fontWeight: FontWeight.bold),
           title: Text(title),
         ),
         body: ListView(
@@ -41,10 +42,9 @@ class ProductDetailsPage extends StatelessWidget {
             children: <Widget>[
               Product(
                   name: "Butterfly-Top",
-                  description:
-                      "Butterfly top fit for the care-free summer",
+                  description: "Butterfly top fit for the care-free summer",
                   price: "UGX: 35,000",
-                  image: "butterfly_top.jpeg")
+                  image: "safeboda.png")
             ]));
   }
 }
@@ -67,22 +67,54 @@ class Product extends StatelessWidget {
     return Container(
         padding: EdgeInsets.all(4),
         height: 120,
-        child: Card(
-          child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Image.asset("project_assets/images/" + this.image, width: 40,),
-                Expanded(
-                  child: Container(
-                      // padding: EdgeInsets.all(),
-                      child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: <Widget>[
-                    Text("Name: " + this.name,
-                        style: TextStyle(fontWeight: FontWeight.bold)),
-                    Text("Desription: " + this.description),
-                    Text("Price: " + this.price.toString()),
-                  ])),
-                )
-              ]),
-        ));
+        child: GestureDetector(
+            onTap: () {
+              _showDialog(context);
+            },
+            child: Card(
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Image.asset(
+                      "assets/images/" + this.image,
+                      width: 140,
+                    ),
+                    Expanded(
+                      child: Container(
+                          // padding: EdgeInsets.all(),
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget>[
+                            Text("Name: " + this.name,
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                            Text("Description: " + this.description),
+                            Text("Price: " + this.price.toString()),
+                          ])),
+                    )
+                  ]),
+            )));
+  }
+
+  void _showDialog(BuildContext context) {
+// flutter defined function
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+
+        return AlertDialog(
+          title: new Text("Message"),
+          content: new Text("Well Done!"),
+          actions: <Widget>[
+            new TextButton(
+              child: new Text("Close"),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 }

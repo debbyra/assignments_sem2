@@ -54,7 +54,7 @@ dev_dependencies:
 flutter:
   #add assets to the project
 assets:
-  -images/butterfly_top.jpeg
+  -assets/images
 
     
   # The following line ensures that the Material Icons font is
