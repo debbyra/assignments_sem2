@@ -11,15 +11,18 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   
+  // the categories and ther products added
   final List<Category> categories = [
     Category(
       title: 'Electronics',
       description: 'Explore the latest gadgets and electronics.',
       imageUrl:
-          'assets/images/category1.jpg', // Add your image file to the assets folder
+          'assets/images/category1.jfif', // Add your image file to the assets folder
           products: [
     Product(name: 'Smartphone', description: 'Latest smartphone model', price: 599.99),
     Product(name: 'Laptop', description: 'High-performance laptop', price: 999.99),
+    Product(name: 'Headphones', description: 'High-perfomance headphones', price: 599.99),
+    Product(name: 'Ipad', description: 'Latest portable Ipad', price: 999.99),
     // Add more products as needed
   ],
     ),
@@ -29,47 +32,51 @@ class _HomePageState extends State<HomePage> {
       imageUrl:
           'assets/images/category2.jpg', // Add your image file to the assets folder
           products: [
-    Product(name: 'Smartphone', description: 'Latest smartphone model', price: 599.99),
-    Product(name: 'Laptop', description: 'High-performance laptop', price: 999.99),
+    Product(name: 'Jeans', description: 'Most trendy jeans', price: 599.99),
+    Product(name: 'Skirts', description: 'Short linen skirts', price: 999.99),
+    Product(name: 'Sweaters', description: 'Cozy sweaters', price: 599.99),
+    Product(name: 'Dresses', description: 'Mini-dresses', price: 999.99),
     // Add more products as needed
   ],
     ),
     Category(
-      title: 'Clothing',
-      description: 'Discover trendy and fashionable clothing styles.',
+      title: 'Groceries',
+      description: 'Shop all groceries for your kitchen. ',
       imageUrl:
           'assets/images/category2.jpg', // Add your image file to the assets folder
           products: [
-    Product(name: 'Smartphone', description: 'Latest smartphone model', price: 599.99),
-    Product(name: 'Laptop', description: 'High-performance laptop', price: 999.99),
+    Product(name: 'Curries', description: 'Locally made curries', price: 599.99),
+    Product(name: 'Vegetables', description: 'Fresh veggies for all purposes', price: 999.99),
+    Product(name: 'Bread', description: 'Local and imported from Italy', price: 599.99),
+    Product(name: 'Cereal', description: 'Fresh cereal well packaged', price: 999.99),
     // Add more products as needed
   ],
     ),
-    Category(
-      title: 'Clothing',
-      description: 'Discover trendy and fashionable clothing styles.',
-      imageUrl:
-          'assets/images/category2.jpg', // Add your image file to the assets folder
-          products: [
-    Product(name: 'Smartphone', description: 'Latest smartphone model', price: 599.99),
-    Product(name: 'Laptop', description: 'High-performance laptop', price: 999.99),
-    Product(name: 'Laptop', description: 'High-performance laptop', price: 999.99),
-    Product(name: 'Laptop', description: 'High-performance laptop', price: 999.99),
+  //   Category(
+  //     title: 'Accessories',
+  //     description: 'Discover trendy and fashionable clothing styles.',
+  //     imageUrl:
+  //         'assets/images/category2.jpg', // Add your image file to the assets folder
+  //         products: [
+  //   Product(name: 'Smartphone', description: 'Latest smartphone model', price: 599.99),
+  //   Product(name: 'Laptop', description: 'High-performance laptop', price: 999.99),
+  //   Product(name: 'Laptop', description: 'High-performance laptop', price: 999.99),
+  //   Product(name: 'Laptop', description: 'High-performance laptop', price: 999.99),
 
-    // Add more products as needed
-  ],
-    ),
-    Category(
-      title: 'Clothing',
-      description: 'Discover trendy and fashionable clothing styles.',
-      imageUrl:
-          'assets/images/category2.jpg', // Add your image file to the assets folder
-          products: [
-    Product(name: 'Smartphone', description: 'Latest smartphone model', price: 599.99),
-    Product(name: 'Laptop', description: 'High-performance laptop', price: 999.99),
-    // Add more products as needed
-  ],
-    ),
+  //   // Add more products as needed
+  // ],
+  //   ),
+  //   Category(
+  //     title: 'Drinks',
+  //     description: 'Discover trendy and fashionable clothing styles.',
+  //     imageUrl:
+  //         'assets/images/category2.jpg', // Add your image file to the assets folder
+  //         products: [
+  //   Product(name: 'Smartphone', description: 'Latest smartphone model', price: 599.99),
+  //   Product(name: 'Laptop', description: 'High-performance laptop', price: 999.99),
+  //   // Add more products as needed
+  // ],
+    // ),
     // Add more categories as needed
   ];
 
@@ -79,19 +86,19 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         //removed the new key word
         elevation: 0.1,
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.blueAccent,
         title: const Text("My-E Shop"),
         actions: <Widget>[
           IconButton(
               icon: const Icon(
                 Icons.search,
-                color: Colors.white,
+                color: Colors.black,
               ),
               onPressed: () {}),
           IconButton(
               icon: const Icon(
                 Icons.shopping_cart,
-                color: Colors.white,
+                color: Colors.grey,
               ),
               onPressed: () {}) //removed the new keyword
         ],
@@ -119,7 +126,7 @@ class _HomePageState extends State<HomePage> {
               ),
               decoration: const BoxDecoration(
                   //removed new
-                  color: Colors.red),
+                  color: Colors.blueAccent),
             ),
 
             //body
@@ -130,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                   title: Text("Home Page"),
                   leading: Icon(
                     Icons.home,
-                    color: Colors.blue,
+                    color: Colors.black,
                   ),
                 )),
 
@@ -140,7 +147,7 @@ class _HomePageState extends State<HomePage> {
                   title: Text("My Account"),
                   leading: Icon(
                     Icons.person,
-                    color: Colors.blue,
+                    color: Colors.black,
                   ),
                 )),
 
@@ -150,7 +157,7 @@ class _HomePageState extends State<HomePage> {
                   title: Text("My Orders"),
                   leading: Icon(
                     Icons.shopping_basket,
-                    color: Colors.blue,
+                    color: Colors.black,
                   ),
                 )),
 
@@ -160,7 +167,7 @@ class _HomePageState extends State<HomePage> {
                   title: Text("Categories"),
                   leading: Icon(
                     Icons.dashboard,
-                    color: Colors.blue,
+                    color: Colors.black,
                   ),
                 )),
 

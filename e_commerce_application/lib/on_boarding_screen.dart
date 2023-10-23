@@ -15,9 +15,10 @@ class OnBoardingScreenOne extends StatelessWidget {
             children: [
               const Text(
                 "MY-E SHOP",
-                style: TextStyle(color: Colors.black, fontSize: 18.0),
+                style: TextStyle(color: Colors.white, fontSize: 18.0),
               ),
-              ElevatedButton(
+              Padding(padding: const EdgeInsets.only(top: 8.0),
+              child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -26,12 +27,15 @@ class OnBoardingScreenOne extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text(">>"),
+                child: const Text(">>", style: TextStyle(color: Colors.blueAccent),),
               )
+              )
+              
             ],
           ),
         ),
       ),
+      backgroundColor: Colors.blueAccent,
     );
   }
 }

@@ -9,19 +9,18 @@ class SignUp extends StatelessWidget {
           title: const Text(
             "SignUp Here!",
             style: TextStyle(
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.normal,
                 color: Color.fromARGB(255, 253, 252, 252)),
           ),
-          backgroundColor: const Color.fromARGB(255, 137, 17, 1)),
+          backgroundColor: Colors.blueAccent),
       backgroundColor: Colors.white,
-      
       body: Center(
         child: Padding(
             padding: const EdgeInsets.all(30.0),
             child: Container(
               padding: const EdgeInsets.all(10.0),
               decoration: BoxDecoration(
-                color: Color.fromARGB(136, 240, 120, 156),
+                color: Colors.white,
                 border: Border.all(
                   color: Colors.blueGrey, // Border color
                   width: 1.0, // Border width
@@ -38,11 +37,7 @@ class SignUp extends StatelessWidget {
                   ),
                   const TextField(
                     decoration:
-                        InputDecoration(hintText: ("Enter your Surname")),
-                  ),
-                  const TextField(
-                    decoration:
-                        InputDecoration(hintText: ("Enter your Given Name")),
+                        InputDecoration(hintText: ("Enter your Name")),
                   ),
                   const TextField(
                     decoration: InputDecoration(hintText: ("Enter your Email")),
@@ -56,7 +51,7 @@ class SignUp extends StatelessWidget {
                         InputDecoration(hintText: ("Confirm your password")),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 20.0),
+                    padding: const EdgeInsets.only(top: 40.0),
                     child: ElevatedButton(
                         onPressed: () {
                           Navigator.push(
@@ -72,8 +67,8 @@ class SignUp extends StatelessWidget {
                             )),
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(const Color
-                              .fromARGB(255, 148, 31,
-                              2)), // Change the color to your desired background color
+                              .fromARGB(255, 136, 162,
+                              247)), // Change the color to your desired background color
                         )),
                   ),
                   TextButton(
@@ -103,15 +98,13 @@ class SignUp extends StatelessWidget {
                             color: Color.fromARGB(255, 252, 251, 251))),
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(const Color
-                          .fromARGB(255, 148, 31,
-                          2)), // Change the color to your desired background color
+                          .fromARGB(255, 136, 162,
+                          247)), // Change the color to your desired background color
                     ),
                   ),
                 ],
-              
               ),
-            )
-            ),
+            )),
       ),
     );
   }

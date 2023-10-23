@@ -7,28 +7,29 @@ class LogIn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: const Text(
-              " Login Here!",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 253, 252, 252)),
-            ),
-            backgroundColor: const Color.fromARGB(255, 137, 17, 1)),
-        backgroundColor: const Color.fromARGB(255, 249, 249, 250),
+          title: const Text(
+            " Login Here!",
+            style: TextStyle(
+                fontWeight: FontWeight.normal,
+                color: Color.fromARGB(255, 253, 252, 252)),
+          ),
+          backgroundColor: Colors.blueAccent,
+        ),
+        backgroundColor: const Color.fromARGB(255, 253, 252, 252),
         body: Center(
             child: Padding(
                 padding: const EdgeInsets.all(30.0),
                 child: Container(
                   padding: const EdgeInsets.all(10.0),
                   decoration: BoxDecoration(
-                color: const Color.fromARGB(136, 240, 120, 156),
-                border: Border.all(
-                  color: Colors.blueGrey, // Border color
-                  width: 1.0, // Border width
-                ),
-                borderRadius: const BorderRadius.all(Radius.circular(
-                    8.0)), // Optional: Add border radius for rounded corners
-              ),
+                    color: const Color.fromARGB(255, 253, 252, 252),
+                    border: Border.all(
+                      color: Colors.blueGrey, // Border color
+                      width: 1.0, // Border width
+                    ),
+                    borderRadius: const BorderRadius.all(Radius.circular(
+                        8.0)), // Optional: Add border radius for rounded corners
+                  ),
                   child: Column(
                     children: [
                       const Text(
@@ -70,8 +71,8 @@ class LogIn extends StatelessWidget {
                                   color: Color.fromARGB(255, 252, 251, 251))),
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all(const Color
-                                .fromARGB(255, 148, 31,
-                                2)), // Change the color to your desired background color
+                                .fromARGB(255, 136, 162,
+                                247)), // Change the color to your desired background color
                           )),
                       TextButton(
                           onPressed: () {
@@ -101,8 +102,8 @@ class LogIn extends StatelessWidget {
                                     const Color.fromARGB(255, 252, 251, 251))),
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(const Color
-                              .fromARGB(255, 148, 31,
-                              2)), // Change the color to your desired background color
+                              .fromARGB(255, 136, 162,
+                              247)), // Change the color to your desired background color
                         ),
                       )
                     ],
