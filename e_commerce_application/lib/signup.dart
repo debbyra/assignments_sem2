@@ -13,7 +13,7 @@ class SignUp extends StatelessWidget {
                 color: Color.fromARGB(255, 253, 252, 252)),
 
           ),
-          backgroundColor: Colors.blueAccent),
+          backgroundColor: Colors.blueGrey),
       backgroundColor: Colors.white,
       body: Center(
         child: Padding(
@@ -67,9 +67,7 @@ class SignUp extends StatelessWidget {
                               color: Color.fromARGB(255, 252, 251, 251),
                             )),
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(const Color
-                              .fromARGB(255, 136, 162,
-                              247)), // Change the color to your desired background color
+                          backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 123, 130, 154)), // Change the color to your desired background color
                         )),
                   ),
                   TextButton(

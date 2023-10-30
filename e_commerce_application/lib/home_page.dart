@@ -1,8 +1,9 @@
+import 'package:e_commerce_application/product_widget.dart';
 import 'package:flutter/material.dart';
 import 'category.dart';
 import 'category_item.dart';
 import 'product.dart';
-// import 'product_widget.dart';
+// import 'product.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,7 +11,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  
   // the categories and ther products added
   final List<Category> categories = [
     Category(
@@ -18,64 +18,105 @@ class _HomePageState extends State<HomePage> {
       description: 'Explore the latest gadgets and electronics.',
       imageUrl:
           'assets/images/category1.jpg', // Add your image file to the assets folder
-          products: [
-    Product(name: 'Smartphone', description: 'Latest smartphone model', price: 599.99),
-    Product(name: 'Laptop', description: 'High-performance laptop', price: 999.99),
-    Product(name: 'Headphones', description: 'High-perfomance headphones', price: 599.99),
-    Product(name: 'Ipad', description: 'Latest portable Ipad', price: 999.99),
-    // Add more products as needed
-  ],
+      products: [
+        Product(
+            name: 'Smartphone',
+            description: 'Latest smartphone model',
+            price: 599.99),
+        Product(
+            name: 'Laptop',
+            description: 'High-performance laptop',
+            price: 999.99),
+        Product(
+            name: 'Headphones',
+            description: 'High-perfomance headphones',
+            price: 599.99),
+        Product(
+            name: 'Ipad', description: 'Latest portable Ipad', price: 999.99),
+        // Add more products as needed
+      ],
     ),
     Category(
       title: 'Clothing',
       description: 'Discover trendy and fashionable clothing styles.',
       imageUrl:
           'assets/images/category2.jpg', // Add your image file to the assets folder
-          products: [
-    Product(name: 'Jeans', description: 'Most trendy jeans', price: 599.99),
-    Product(name: 'Skirts', description: 'Short linen skirts', price: 999.99),
-    Product(name: 'Sweaters', description: 'Cozy sweaters', price: 599.99),
-    Product(name: 'Dresses', description: 'Mini-dresses', price: 999.99),
-    // Add more products as needed
-  ],
+      products: [
+        Product(name: 'Jeans', description: 'Most trendy jeans', price: 599.99),
+        Product(
+            name: 'Skirts', description: 'Short linen skirts', price: 999.99),
+        Product(name: 'Sweaters', description: 'Cozy sweaters', price: 599.99),
+        Product(name: 'Dresses', description: 'Mini-dresses', price: 999.99),
+        // Add more products as needed
+      ],
     ),
     Category(
       title: 'Groceries',
       description: 'Shop all groceries for your kitchen. ',
       imageUrl:
           'assets/images/category3.jpg', // Add your image file to the assets folder
-          products: [
-    Product(name: 'Curries', description: 'Locally made curries', price: 599.99),
-    Product(name: 'Vegetables', description: 'Fresh veggies for all purposes', price: 999.99),
-    Product(name: 'Bread', description: 'Local and imported from Italy', price: 599.99),
-    Product(name: 'Cereal', description: 'Fresh cereal well packaged', price: 999.99),
-    // Add more products as needed
-  ],
+      products: [
+        Product(
+            name: 'Curries',
+            description: 'Locally made curries',
+            price: 599.99),
+        Product(
+            name: 'Vegetables',
+            description: 'Fresh veggies for all purposes',
+            price: 999.99),
+        Product(
+            name: 'Bread',
+            description: 'Local and imported from Italy',
+            price: 599.99),
+        Product(
+            name: 'Cereal',
+            description: 'Fresh cereal well packaged',
+            price: 999.99),
+        // Add more products as needed
+      ],
     ),
     Category(
       title: 'Accessories',
       description: 'Discover trendy and fashionable clothing styles.',
       imageUrl:
           'assets/images/category4.jpg', // Add your image file to the assets folder
-          products: [
-    Product(name: 'Smartphone', description: 'Latest smartphone model', price: 599.99),
-    Product(name: 'Laptop', description: 'High-performance laptop', price: 999.99),
-    Product(name: 'Laptop', description: 'High-performance laptop', price: 999.99),
-    Product(name: 'Laptop', description: 'High-performance laptop', price: 999.99),
+      products: [
+        Product(
+            name: 'Smartphone',
+            description: 'Latest smartphone model',
+            price: 599.99),
+        Product(
+            name: 'Laptop',
+            description: 'High-performance laptop',
+            price: 999.99),
+        Product(
+            name: 'Laptop',
+            description: 'High-performance laptop',
+            price: 999.99),
+        Product(
+            name: 'Laptop',
+            description: 'High-performance laptop',
+            price: 999.99),
 
-    // Add more products as needed
-  ],
+        // Add more products as needed
+      ],
     ),
     Category(
       title: 'Drinks',
       description: 'Discover trendy and fashionable clothing styles.',
       imageUrl:
           'assets/images/category5.jpg', // Add your image file to the assets folder
-          products: [
-    Product(name: 'Smartphone', description: 'Latest smartphone model', price: 599.99),
-    Product(name: 'Laptop', description: 'High-performance laptop', price: 999.99),
-    // Add more products as needed
-  ],
+      products: [
+        Product(
+            name: 'Smartphone',
+            description: 'Latest smartphone model',
+            price: 599.99),
+        Product(
+            name: 'Laptop',
+            description: 'High-performance laptop',
+            price: 999.99),
+        // Add more products as needed
+      ],
     ),
     // Add more categories as needed
   ];
@@ -86,19 +127,22 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         //removed the new key word
         elevation: 0.1,
-        backgroundColor: Colors.blueAccent,
-        title: const Text("DW-Collectionz"),
+        backgroundColor: Colors.white,
+        title: const Text(
+          "DW-Collectionz",
+          style: TextStyle(fontSize: 28.0),
+        ),
         actions: <Widget>[
           IconButton(
               icon: const Icon(
                 Icons.search,
-                color: Colors.white,
+                color: Colors.grey,
               ),
               onPressed: () {}),
           IconButton(
               icon: const Icon(
                 Icons.shopping_cart,
-                color: Colors.white,
+                color: Colors.black,
               ),
               onPressed: () {}) //removed the new keyword
         ],
@@ -129,7 +173,7 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.blueAccent),
             ),
 
-            //body
+            //drawer body
 
             InkWell(
                 onTap: () {},
@@ -162,7 +206,14 @@ class _HomePageState extends State<HomePage> {
                 )),
 
             InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>const ProductList(products: [],),
+                    ),
+                  );
+                },
                 child: const ListTile(
                   title: Text("Products"),
                   leading: Icon(
@@ -216,11 +267,13 @@ class _HomePageState extends State<HomePage> {
             );
           }
           // Subtract 1 from index to get the correct category index
-          return CategoryItem(category: categories[index - 1],);
+          return CategoryItem(
+            category: categories[index - 1],
+          );
         },
         padding: const EdgeInsets.all(8.0),
       ),
-
+      backgroundColor: Colors.blueGrey,
     );
   }
 }

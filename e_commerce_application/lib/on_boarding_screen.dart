@@ -14,8 +14,8 @@ class OnBoardingScreenOne extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                "MY-E SHOP",
-                style: TextStyle(color: Colors.white, fontSize: 18.0),
+                "DW-Collectionz",
+                style: TextStyle(color: Colors.white, fontSize: 25.0,fontStyle: FontStyle.italic),
               ),
               Padding(padding: const EdgeInsets.only(top: 8.0),
               child: ElevatedButton(
@@ -27,7 +27,7 @@ class OnBoardingScreenOne extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text(">>", style: TextStyle(color: Colors.blueAccent),),
+                child: const Text(">>", style: TextStyle(color: Colors.black),),
               )
               )
               
@@ -35,38 +35,11 @@ class OnBoardingScreenOne extends StatelessWidget {
           ),
         ),
       ),
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Colors.blueGrey,
     );
   }
 }
 
 
 
-// import 'package:flutter/material.dart';
-// import 'on_boarding_screen_two.dart';
 
-// class OnBoardingScreenOne extends StatelessWidget {
-//   const OnBoardingScreenOne({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       child: Center(
-//           child: Column(
-//         children: [
-//           margin: EdgeInsets.only(top: 20.0),
-//           const Text("Buy with My-E for Better deals",style: TextStyle(color: Colors.black),),
-//           ElevatedButton(
-//               onPressed: () {
-//                 Navigator.push(
-//                     context,
-//                     MaterialPageRoute(
-//                       builder: (context) => const OnBoardingScreenTwo(),
-//                     ));
-//               },
-//               child: const Text("Next"))
-//         ],
-//       )),
-//     );
-//   }
-// }

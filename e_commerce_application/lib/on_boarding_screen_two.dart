@@ -1,4 +1,4 @@
-import 'package:e_commerce_application/signup.dart';
+import 'package:e_commerce_application/login.dart';
 import 'package:flutter/material.dart';
 // import 'signup.dart';
 
@@ -12,21 +12,22 @@ class OnBoardingScreenTwo extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            
-            
-            const Image(
-              image: NetworkImage(
-                "https://media.istockphoto.com/id/1368994091/photo/couple-shopping-using-phone-application-holding-shopper-bags-in-mall.jpg?s=612x612&w=0&k=20&c=AnmKCImJhAqQzFQXh1xUZ9M0oLGGbrxpbfYmlXoGrYE=",
-              ),
-              width: 500,
-              height: 500,
-              alignment: Alignment.center,
+            // const Image(
+            //   image: NetworkImage(
+            //     "https://media.istockphoto.com/id/1368994091/photo/couple-shopping-using-phone-application-holding-shopper-bags-in-mall.jpg?s=612x612&w=0&k=20&c=AnmKCImJhAqQzFQXh1xUZ9M0oLGGbrxpbfYmlXoGrYE=",
+            //   ),
+            //   width: 500,
+            //   height: 500,
+            //   alignment: Alignment.center,
+            // ),
+            Image.asset(
+              "images/onboarding.png"
             ),
             const Text(
               "Shopping Made Easy...!",
               style: TextStyle(
                 fontSize: 20,
-                color: Colors.black,
+                color: Colors.blueGrey,
                 fontWeight: FontWeight.bold,
               ),
               textAlign: TextAlign.center,
@@ -35,31 +36,29 @@ class OnBoardingScreenTwo extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // ElevatedButton(
-                //   onPressed: () {
-                //     Navigator.pop(context);
-                //   },
-                //   child: const Text("Back", style: TextStyle(color: Colors.black),),
-                // ),
-                const SizedBox(width: 20), // Add some horizontal space between buttons
+                const SizedBox(
+                    width: 20), // Add some horizontal space between buttons
                 ElevatedButton(
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>  SignUp(),
+                        builder: (context) => LogIn(),
                       ),
                     );
                   },
-                  style: ButtonStyle(),
-                  child: const Text("Get Started", style: TextStyle(color: Colors.black),),
+                  child: const Text(
+                    "Get Started",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Color.fromARGB(255, 112, 113, 116))),
                 ),
               ],
             ),
           ],
         ),
       ),
-      backgroundColor: Colors.blue[50],
+      backgroundColor: Colors.white,
     );
   }
 }

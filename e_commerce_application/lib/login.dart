@@ -13,7 +13,7 @@ class LogIn extends StatelessWidget {
                 fontWeight: FontWeight.normal,
                 color: Color.fromARGB(255, 253, 252, 252)),
           ),
-          backgroundColor: Colors.blueAccent,
+          backgroundColor: Colors.blueGrey,
         ),
         backgroundColor: const Color.fromARGB(255, 253, 252, 252),
         body: Center(
@@ -32,12 +32,6 @@ class LogIn extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      const Text(
-                        "LogIn",
-                        style: TextStyle(
-                            fontSize: 22,
-                            color: Color.fromARGB(0, 241, 122, 17)),
-                      ),
                       const TextField(
                         decoration:
                             InputDecoration(hintText: ("Enter your Email")),
@@ -46,35 +40,40 @@ class LogIn extends StatelessWidget {
                         decoration:
                             InputDecoration(hintText: ("Enter your Password")),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 70.0),
-                        child: TextButton(
+                      const Padding(
+                        padding: EdgeInsets.only(top: 90.0),
+                      ),
+                      Row(children: [
+                        ElevatedButton(
                             onPressed: () {
-                              print("Forgot password clicked");
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => HomePage(),
+                                ),
+                              );
+                            },
+                            child: const Text("LogIn",
+                                style: TextStyle(
+                                    color: Color.fromARGB(255, 252, 251, 251))),
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(
+                                  Color.fromARGB(255, 123, 130, 154)), // Change the color to your desired background color
+                            )),
+                        TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => SignUp(),
+                                ),
+                              );
                             },
                             child: const Text(
-                              "Forgot password?",
+                              "Don't have an account?",
                               style: TextStyle(color: Colors.black),
                             )),
-                      ),
-                      ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => HomePage(),
-                              ),
-                            );
-                          },
-                          child: const Text("LogIn",
-                              style: TextStyle(
-                                  color: Color.fromARGB(255, 252, 251, 251))),
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(const Color
-                                .fromARGB(255, 136, 162,
-                                247)), // Change the color to your desired background color
-                          )),
-                      TextButton(
+                        ElevatedButton(
                           onPressed: () {
                             Navigator.push(
                               context,
@@ -83,29 +82,15 @@ class LogIn extends StatelessWidget {
                               ),
                             );
                           },
-                          child: const Text(
-                            "Don't have an account?",
-                            style: TextStyle(color: Colors.black),
-                          )),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => SignUp(),
-                            ),
-                          );
-                        },
-                        child: const Text("SignUp",
-                            style: TextStyle(
-                                color:
-                                    const Color.fromARGB(255, 252, 251, 251))),
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(const Color
-                              .fromARGB(255, 136, 162,
-                              247)), // Change the color to your desired background color
-                        ),
-                      )
+                          child: const Text("SignUp",
+                              style: TextStyle(
+                                  color: const Color.fromARGB(
+                                      255, 252, 251, 251))),
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 123, 130, 154)), // Change the color to your desired background color
+                          ),
+                        )
+                      ]),
                     ],
                   ),
                 ))));
