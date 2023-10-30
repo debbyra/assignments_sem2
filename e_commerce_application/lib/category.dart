@@ -4,12 +4,12 @@ class Category {
   final String title;
   final String description;
   final String imageUrl;
-  final List<Product> products; // Add a products property of type List<Product>
+  final List<Product> products; // Added a products property of type List<Product>
 
   Category({
     required this.title,
     required this.description,
     required this.imageUrl,
-    required this.products, // Add products to the constructor
+    required this.products, // Added products to the constructor
   });
 }

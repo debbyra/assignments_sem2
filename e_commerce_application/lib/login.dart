@@ -84,7 +84,7 @@ class LogIn extends StatelessWidget {
                             );
                           },
                           child: const Text(
-                            "Don't have an account SignUp Here",
+                            "Don't have an account?",
                             style: TextStyle(color: Colors.black),
                           )),
                       ElevatedButton(

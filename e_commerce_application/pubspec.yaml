@@ -63,6 +63,9 @@ flutter:
   assets:
     - assets/images/category1.jpg
     - assets/images/category2.jpg
+    - assets/images/category3.jpg
+    - assets/images/category4.jpg
+    - assets/images/category5.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:

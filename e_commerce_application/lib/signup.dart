@@ -7,10 +7,11 @@ class SignUp extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           title: const Text(
-            "SignUp Here!",
+            "SignUp Here",
             style: TextStyle(
                 fontWeight: FontWeight.normal,
                 color: Color.fromARGB(255, 253, 252, 252)),
+
           ),
           backgroundColor: Colors.blueAccent),
       backgroundColor: Colors.white,
@@ -81,27 +82,27 @@ class SignUp extends StatelessWidget {
                         );
                       },
                       child: const Text(
-                        "Already Signed Up?",
-                        style: TextStyle(color: Colors.black),
+                        "Already Signed Up? ",
+                        style: TextStyle(color: Colors.black, fontSize: 13),
                       )),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => LogIn(),
-                        ),
-                      );
-                    },
-                    child: const Text("Now LogIn",
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 252, 251, 251))),
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(const Color
-                          .fromARGB(255, 136, 162,
-                          247)), // Change the color to your desired background color
-                    ),
-                  ),
+                  // ElevatedButton(
+                  //   onPressed: () {
+                  //     Navigator.push(
+                  //       context,
+                  //       MaterialPageRoute(
+                  //         builder: (context) => LogIn(),
+                  //       ),
+                  //     );
+                  //   },
+                  //   child: const Text("Now LogIn",
+                  //       style: TextStyle(
+                  //           color: Color.fromARGB(255, 252, 251, 251))),
+                  //   style: ButtonStyle(
+                  //     backgroundColor: MaterialStateProperty.all(const Color
+                  //         .fromARGB(255, 136, 162,
+                  //         247)), // Change the color to your desired background color
+                  //   ),
+                  // ),
                 ],
               ),
             )),
