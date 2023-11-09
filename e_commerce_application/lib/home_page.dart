@@ -1,8 +1,9 @@
 import 'package:e_commerce_application/product_widget.dart';
 import 'package:flutter/material.dart';
 import 'category.dart';
-import 'category_item.dart';
+// import 'category_item.dart';
 import 'product.dart';
+import 'package:e_commerce_application/my_carousel.dart';
 // import 'product.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,6 +12,82 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final List<Product> products = [
+    Product(
+      name: 'Curries',
+      description: 'Locally made curries',
+      price: 599.99,
+      imageUrl: 'assets/images/category2.jpg',
+    ),
+    Product(
+      name: 'Vegetables',
+      description: 'Fresh veggies for all purposes',
+      price: 999.99,
+      imageUrl: 'assets/images/category2.jpg',
+    ),
+    Product(
+      name: 'Bread',
+      description: 'Local and imported from Italy',
+      price: 599.99,
+      imageUrl: 'assets/images/category2.jpg',
+    ),
+    Product(
+      name: 'Cereal',
+      description: 'Fresh cereal well packaged',
+      price: 999.99,
+      imageUrl: 'assets/images/category2.jpg',
+    ),
+    Product(
+      name: 'Smartphone',
+      description: 'Latest smartphone model',
+      price: 599.99,
+      imageUrl: 'assets/images/category2.jpg',
+    ),
+    Product(
+      name: 'Laptop',
+      description: 'High-performance laptop',
+      price: 999.99,
+      imageUrl: 'assets/images/category2.jpg',
+    ),
+    Product(
+      name: 'Headphones',
+      description: 'High-perfomance headphones',
+      price: 599.99,
+      imageUrl: 'assets/images/category2.jpg',
+    ),
+    Product(
+      name: 'Ipad',
+      description: 'Latest portable Ipad',
+      price: 999.99,
+      imageUrl: 'assets/images/category2.jpg',
+    ),
+    Product(
+      name: 'Jeans',
+      description: 'Most trendy jeans',
+      price: 599.99,
+      imageUrl: 'assets/images/category2.jpg',
+    ),
+    Product(
+      name: 'Skirts',
+      description: 'Short linen skirts',
+      price: 999.99,
+      imageUrl: 'assets/images/category2.jpg',
+    ),
+    Product(
+      name: 'Sweaters',
+      description: 'Cozy sweaters',
+      price: 599.99,
+      imageUrl: 'assets/images/category2.jpg',
+    ),
+    Product(
+      name: 'Dresses',
+      description: 'Mini-dresses',
+      price: 999.99,
+      imageUrl: 'assets/images/category2.jpg',
+    ),
+    // Add more products as needed
+  ];
+
   // the categories and ther products added
   final List<Category> categories = [
     Category(
@@ -18,105 +95,30 @@ class _HomePageState extends State<HomePage> {
       description: 'Explore the latest gadgets and electronics.',
       imageUrl:
           'assets/images/category1.jpg', // Add your image file to the assets folder
-      products: [
-        Product(
-            name: 'Smartphone',
-            description: 'Latest smartphone model',
-            price: 599.99),
-        Product(
-            name: 'Laptop',
-            description: 'High-performance laptop',
-            price: 999.99),
-        Product(
-            name: 'Headphones',
-            description: 'High-perfomance headphones',
-            price: 599.99),
-        Product(
-            name: 'Ipad', description: 'Latest portable Ipad', price: 999.99),
-        // Add more products as needed
-      ],
     ),
     Category(
       title: 'Clothing',
       description: 'Discover trendy and fashionable clothing styles.',
       imageUrl:
           'assets/images/category2.jpg', // Add your image file to the assets folder
-      products: [
-        Product(name: 'Jeans', description: 'Most trendy jeans', price: 599.99),
-        Product(
-            name: 'Skirts', description: 'Short linen skirts', price: 999.99),
-        Product(name: 'Sweaters', description: 'Cozy sweaters', price: 599.99),
-        Product(name: 'Dresses', description: 'Mini-dresses', price: 999.99),
-        // Add more products as needed
-      ],
     ),
     Category(
       title: 'Groceries',
       description: 'Shop all groceries for your kitchen. ',
       imageUrl:
           'assets/images/category3.jpg', // Add your image file to the assets folder
-      products: [
-        Product(
-            name: 'Curries',
-            description: 'Locally made curries',
-            price: 599.99),
-        Product(
-            name: 'Vegetables',
-            description: 'Fresh veggies for all purposes',
-            price: 999.99),
-        Product(
-            name: 'Bread',
-            description: 'Local and imported from Italy',
-            price: 599.99),
-        Product(
-            name: 'Cereal',
-            description: 'Fresh cereal well packaged',
-            price: 999.99),
-        // Add more products as needed
-      ],
     ),
     Category(
       title: 'Accessories',
       description: 'Discover trendy and fashionable clothing styles.',
       imageUrl:
           'assets/images/category4.jpg', // Add your image file to the assets folder
-      products: [
-        Product(
-            name: 'Smartphone',
-            description: 'Latest smartphone model',
-            price: 599.99),
-        Product(
-            name: 'Laptop',
-            description: 'High-performance laptop',
-            price: 999.99),
-        Product(
-            name: 'Laptop',
-            description: 'High-performance laptop',
-            price: 999.99),
-        Product(
-            name: 'Laptop',
-            description: 'High-performance laptop',
-            price: 999.99),
-
-        // Add more products as needed
-      ],
     ),
     Category(
       title: 'Drinks',
       description: 'Discover trendy and fashionable clothing styles.',
       imageUrl:
           'assets/images/category5.jpg', // Add your image file to the assets folder
-      products: [
-        Product(
-            name: 'Smartphone',
-            description: 'Latest smartphone model',
-            price: 599.99),
-        Product(
-            name: 'Laptop',
-            description: 'High-performance laptop',
-            price: 999.99),
-        // Add more products as needed
-      ],
     ),
     // Add more categories as needed
   ];
@@ -210,7 +212,9 @@ class _HomePageState extends State<HomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>const ProductList(products: [],),
+                      builder: (context) => const ProductList(
+                        products: [],
+                      ),
                     ),
                   );
                 },
@@ -250,30 +254,100 @@ class _HomePageState extends State<HomePage> {
 //body of homepage starts here
 //code one
 
-      body: ListView.builder(
-        itemCount: categories.length + 1,
-        itemBuilder: (context, index) {
-          if (index == 0) {
-            // Return the text header for index 0
-            return const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                'Categories',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            // Carousel Section
+            Container(
+              height: 200,
+              child: MyCarousel(), // Add your carousel widget here
+            ),
+            // Categories Section
+            Container(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Categories',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 10),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: categories
+                          .map((category) => Padding(
+                                padding: const EdgeInsets.only(right: 16),
+                                child: Chip(
+                                  label: Text(category.title),
+                                ),
+                              ))
+                          .toList(),
+                    ),
+                  ),
+                ],
               ),
-            );
-          }
-          // Subtract 1 from index to get the correct category index
-          return CategoryItem(
-            category: categories[index - 1],
-          );
-        },
-        padding: const EdgeInsets.all(8.0),
+            ),
+            // Product List Section
+            Container(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Products',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 10),
+                  Column(
+                    children: products
+                        .map((product) => ListTile(
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(product.imageUrl),
+                              ),
+                              title: Text(product.name),
+                              onTap: () {
+                                // Handle product tap
+                              },
+                            ))
+                        .toList(),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
       backgroundColor: Colors.blueGrey,
     );
   }
 }
+
+
+
+
+
+// body: ListView.builder(
+//         itemCount: categories.length + 1,
+//         itemBuilder: (context, index) {
+//           if (index == 0) {
+//             // Return the text header for index 0
+//             return const Padding(
+//               padding: EdgeInsets.all(8.0),
+//               child: Text(
+//                 'Categories',
+//                 style: TextStyle(
+//                   fontSize: 20,
+//                   fontWeight: FontWeight.bold,
+//                 ),
+//               ),
+//             );
+//           }
+//           // Subtract 1 from index to get the correct category index
+//           return CategoryItem(
+//             category: categories[index - 1],
+//           );
+//         },
+//         padding: const EdgeInsets.all(8.0),
+//       ),

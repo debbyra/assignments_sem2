@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'category.dart'; // Import the Category class
-import 'product_widget.dart'; // Import the ProductList widget
+// import 'product_widget.dart'; // Import the ProductList widget
 // import 'product.dart'; // Import the Product model
 
 class CategoryItem extends StatelessWidget {
@@ -12,14 +12,14 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-         Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ProductList(products: category.products),
-          ),
-        );
-      },
+      // onTap: () {
+      //    Navigator.push(
+      //     context,
+      //     MaterialPageRoute(
+      //       builder: (context) => ProductList(products: category.products),
+      //     ),
+      //   );
+      // },
       child: Card(
         child: Column(
           children: <Widget>[
