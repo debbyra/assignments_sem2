@@ -1,10 +1,9 @@
 import 'package:e_commerce_application/product_widget.dart';
 import 'package:flutter/material.dart';
 import 'category.dart';
-// import 'category_item.dart';
+import 'cart.dart';
 import 'product.dart';
 import 'package:e_commerce_application/my_carousel.dart';
-// import 'product.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -12,6 +11,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final Cart _cart = Cart(); // Create an instance of the Cart class
+
   final List<Product> products = [
     Product(
       name: 'Curries',
@@ -146,7 +147,9 @@ class _HomePageState extends State<HomePage> {
                 Icons.shopping_cart,
                 color: Colors.black,
               ),
-              onPressed: () {}) //removed the new keyword
+              onPressed: () {
+                _showCartDialog(context);
+              }) //removed the new keyword
         ],
       ),
 
@@ -309,6 +312,7 @@ class _HomePageState extends State<HomePage> {
                               title: Text(product.name),
                               onTap: () {
                                 // Handle product tap
+                                _addToCart(product);
                               },
                             ))
                         .toList(),
@@ -321,6 +325,54 @@ class _HomePageState extends State<HomePage> {
       ),
       backgroundColor: Colors.blueGrey,
     );
+  }
+
+  // Function to add a product to the cart
+  void _addToCart(Product product) {
+    setState(() {
+      _cart.addToCart(product);
+    });
+  }
+
+  // Function to show a dialog displaying the cart content
+  void _showCartDialog(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('Shopping Cart'),
+            content: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                for (Product item in _cart.items)
+                  ListTile(
+                    title: Text(item.name),
+                    subtitle: Text('\$${item.price.toStringAsFixed(2)}'),
+                  ),
+                const Divider(),
+                ListTile(
+                  title: const Text('Total:'),
+                  subtitle: Text('\$${_cart.total.toStringAsFixed(2)}'),
+                ),
+              ],
+            ),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text('Close'),
+              ),
+              TextButton(
+                onPressed: () {
+                  _cart.clearCart();
+                  Navigator.pop(context);
+                },
+                child: const Text('Clear Cart'),
+              ),
+            ],
+          );
+        });
   }
 }
 
