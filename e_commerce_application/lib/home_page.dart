@@ -1,4 +1,5 @@
-import 'package:e_commerce_application/product_widget.dart';
+import 'package:e_commerce_application/product_page.dart';
+import 'package:e_commerce_application/category_page.dart';
 import 'package:flutter/material.dart';
 import 'category.dart';
 import 'cart.dart';
@@ -38,7 +39,7 @@ class _HomePageState extends State<HomePage> {
       price: 999.99,
       imageUrl: 'assets/images/category2.jpg',
     ),
-    
+
     Product(
       name: 'Headphone covers',
       description: 'High-perfomance headphones covers',
@@ -78,38 +79,68 @@ class _HomePageState extends State<HomePage> {
     // Add more products as needed
   ];
 
-  // the categories 
+  // the categories
   final List<Category> categories = [
     Category(
-      title: 'Head covers',
-      description: 'Explore the latest.',
-      imageUrl:
-          'assets/images/category1.jpg', // Add your image file to the assets folder
-    ),
+        title: 'Head covers',
+        description: 'Explore the latest trends.',
+        imageUrl: 'assets/images/category1.jpg',
+        products: [
+          Product(
+            name: 'Headsocks',
+            description: 'Locally made ',
+            price: 599.99,
+            imageUrl: 'assets/images/category1.jpg',
+          )
+        ]),
     Category(
-      title: 'Skirts and undies',
-      description: 'Discover trendy and fashionable clothing styles.',
-      imageUrl:
-          'assets/images/category2.jpg', // Add your image file to the assets folder
-    ),
+        title: 'Skirts and undies',
+        description: 'Discover trendy and fashionable clothing styles.',
+        imageUrl: 'assets/images/category2.jpg',
+        products: [
+          Product(
+            name: 'Skirts',
+            description: 'Short  skirts',
+            price: 999.99,
+            imageUrl: 'assets/images/category2.jpg',
+          )
+        ]),
     Category(
-      title: 'Shawls and wraps',
-      description: 'Shop all for your closet. ',
-      imageUrl:
-          'assets/images/category3.jpg', // Add your image file to the assets folder
-    ),
+        title: 'Shawls and wraps',
+        description: 'Shop all for your closet. ',
+        imageUrl: 'assets/images/category3.jpg',
+        products: [
+          Product(
+            name: 'Sweaters',
+            description: 'Cozy sweaters',
+            price: 599.99,
+            imageUrl: 'assets/images/category2.jpg',
+          )
+        ]),
     Category(
-      title: 'Accessories',
-      description: 'Discover trendy and fashionable clothing styles.',
-      imageUrl:
-          'assets/images/category4.jpg', // Add your image file to the assets folder
-    ),
+        title: 'Accessories',
+        description: 'Discover trendy and fashionable clothing styles.',
+        imageUrl: 'assets/images/product3.jpg',
+        products: [
+          Product(
+            name: 'Arm warmers',
+            description: ' well packaged for winter',
+            price: 999.99,
+            imageUrl: 'assets/images/category2.jpg',
+          )
+        ]),
     Category(
-      title: 'Tops',
-      description: 'Discover trendy and fashionable clothing styles.',
-      imageUrl:
-          'assets/images/category5.jpg', // Add your image file to the assets folder
-    ),
+        title: 'Tops',
+        description: 'Discover trendy and fashionable clothing styles.',
+        imageUrl: 'assets/images/category5.jpg',
+        products: [
+          Product(
+            name: 'Sweaters',
+            description: 'Cozy sweaters',
+            price: 599.99,
+            imageUrl: 'assets/images/product2.jpg',
+          )
+        ]),
     // Add more categories as needed
   ];
 
@@ -119,22 +150,22 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         //removed the new key word
         elevation: 0.1,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.blueGrey,
         title: const Text(
           "DW-Collectionz",
-          style: TextStyle(fontSize: 28.0),
+          style: TextStyle(fontSize: 28.0, color: Colors.white),
         ),
         actions: <Widget>[
           IconButton(
               icon: const Icon(
                 Icons.search,
-                color: Colors.grey,
+                color: Colors.white,
               ),
               onPressed: () {}),
           IconButton(
               icon: const Icon(
                 Icons.shopping_cart,
-                color: Colors.black,
+                color: Colors.white,
               ),
               onPressed: () {
                 _showCartDialog(context);
@@ -150,7 +181,7 @@ class _HomePageState extends State<HomePage> {
             // header
             UserAccountsDrawerHeader(
               //removed new key word
-              accountName: const Text('Debby Brasky'),
+              accountName: const Text('Deborah Nanyanzi'),
               accountEmail: const Text('deborahrahj20@gmail.com'),
               currentAccountPicture: GestureDetector(
                 child: const CircleAvatar(
@@ -204,9 +235,8 @@ class _HomePageState extends State<HomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ProductList(
-                        products: [],
-                      ),
+                      builder: (context) =>
+                          ProductsPage(products: products, cart: Cart()),
                     ),
                   );
                 },
@@ -248,8 +278,12 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            const SizedBox(
+              height: 30, 
+            ),
             // Carousel Section
-            SizedBox(
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               height: 200,
               child: MyCarousel(), // carousel widget here
             ),
@@ -271,12 +305,21 @@ class _HomePageState extends State<HomePage> {
                       children: categories
                           .map((category) => Padding(
                                 padding: const EdgeInsets.only(right: 16),
-                                child: Chip(
-                                  label: Text(category.title),
-                              //     onTap: () {
-                              //   // Handle product tap
-                              //   _addToCart(product);
-                              // },
+                                child: InkWell(
+                                  onTap: () {
+                                    // Navigate to the CategoryPage when a category is tapped
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => CategoryPage(
+                                            category: category,
+                                            cart: Cart(),
+                                          ),
+                                        ));
+                                  },
+                                  child: Chip(
+                                    label: Text(category.title),
+                                  ),
                                 ),
                               ))
                           .toList(),
@@ -317,7 +360,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      backgroundColor: const Color.fromARGB(255, 199, 234, 251),
+      backgroundColor: const Color.fromARGB(255, 206, 214, 217),
     );
   }
 
@@ -328,7 +371,7 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  // Function to show a dialog displaying the cart content
+  // Function to show a dialog displaying the cart content and actions
   void _showCartDialog(BuildContext context) {
     showDialog(
         context: context,
@@ -342,6 +385,13 @@ class _HomePageState extends State<HomePage> {
                   ListTile(
                     title: Text(item.name),
                     subtitle: Text('\$${item.price.toStringAsFixed(2)}'),
+                    trailing: TextButton(
+                      onPressed: () {
+                        _cart.removeFromCart(item);
+                        Navigator.pop(context);
+                      },
+                      child: const Text('Remove'),
+                    ),
                   ),
                 const Divider(),
                 ListTile(
@@ -369,10 +419,6 @@ class _HomePageState extends State<HomePage> {
         });
   }
 }
-
-
-
-
 
 // body: ListView.builder(
 //         itemCount: categories.length + 1,

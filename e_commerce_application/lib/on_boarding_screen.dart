@@ -14,8 +14,8 @@ class OnBoardingScreenOne extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                "DW-Collectionz",
-                style: TextStyle(color: Colors.white, fontSize: 25.0,fontStyle: FontStyle.italic),
+                "Debby-Wright Collectionz",
+                style: TextStyle(color: Colors.white, fontSize: 28.0,fontStyle: FontStyle.normal),
               ),
               Padding(padding: const EdgeInsets.only(top: 8.0),
               child: ElevatedButton(
@@ -27,7 +27,7 @@ class OnBoardingScreenOne extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text(">>", style: TextStyle(color: Colors.black),),
+                child: const Text(">>", style: TextStyle(color: Colors.black, fontSize: 30.0),),
               )
               )
               

@@ -27,7 +27,7 @@ class OnBoardingScreenTwo extends StatelessWidget {
               "Shopping Made Easy...!",
               style: TextStyle(
                 fontSize: 20,
-                color: Colors.blueGrey,
+                color: Color.fromARGB(255, 10, 10, 10),
                 fontWeight: FontWeight.bold,
               ),
               textAlign: TextAlign.center,
