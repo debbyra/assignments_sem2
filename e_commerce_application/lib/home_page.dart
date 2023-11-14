@@ -420,26 +420,4 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-// body: ListView.builder(
-//         itemCount: categories.length + 1,
-//         itemBuilder: (context, index) {
-//           if (index == 0) {
-//             // Return the text header for index 0
-//             return const Padding(
-//               padding: EdgeInsets.all(8.0),
-//               child: Text(
-//                 'Categories',
-//                 style: TextStyle(
-//                   fontSize: 20,
-//                   fontWeight: FontWeight.bold,
-//                 ),
-//               ),
-//             );
-//           }
-//           // Subtract 1 from index to get the correct category index
-//           return CategoryItem(
-//             category: categories[index - 1],
-//           );
-//         },
-//         padding: const EdgeInsets.all(8.0),
-//       ),
+

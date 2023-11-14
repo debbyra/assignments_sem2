@@ -71,7 +71,7 @@ class CategoryPage extends StatelessWidget {
       appBar: AppBar(
         //removed the new key word
         elevation: 0.1,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.blueGrey,
         title: Text(
           category.title,
           style: const TextStyle(fontSize: 28.0),
@@ -80,13 +80,13 @@ class CategoryPage extends StatelessWidget {
           IconButton(
               icon: const Icon(
                 Icons.search,
-                color: Colors.black,
+                color: Colors.white,
               ),
               onPressed: () {}),
           IconButton(
               icon: const Icon(
                 Icons.shopping_cart,
-                color: Colors.black,
+                color: Colors.white,
               ),
               onPressed: () {
                 _showCartDialog(context);
@@ -126,14 +126,15 @@ class CategoryPage extends StatelessWidget {
                 itemBuilder: (context, index) {
                   Product product = category.products[index];
                   return ListTile(
-                    title: Text(product.name),
+                    title: Text(product.name,style:const  TextStyle(color: Colors.black),),
                     //more details
                     subtitle: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Description: ${product.description}'),
-                        Text('Price: \$${product.price.toString()}'),
+                        Text('Description: ${product.description}',style:const  TextStyle(color: Colors.black),),
+                        Text('Price: \$${product.price.toString()}',style:const  TextStyle(color: Colors.black),),
                       ],
+                      
                     ),
 
                     leading: Image.asset(
@@ -153,6 +154,7 @@ class CategoryPage extends StatelessWidget {
           ],
         ),
       ),
+      backgroundColor: Color.fromARGB(255, 196, 207, 211),
     );
   }
 }
