@@ -11,66 +11,55 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final Cart _cart = Cart(); // Create an instance of the Cart class
+  final Cart _cart = Cart(); //  an instance of the Cart class
 
   final List<Product> products = [
     Product(
-      name: 'Curries',
-      description: 'Locally made curries',
+      name: 'Headsocks',
+      description: 'Locally made ',
       price: 599.99,
-      imageUrl: 'assets/images/category2.jpg',
+      imageUrl: 'assets/images/category1.jpg',
     ),
     Product(
-      name: 'Vegetables',
-      description: 'Fresh veggies for all purposes',
+      name: 'Hoodies',
+      description: 'Cute hoodies for all purposes',
       price: 999.99,
       imageUrl: 'assets/images/category2.jpg',
     ),
     Product(
-      name: 'Bread',
+      name: 'Thread',
       description: 'Local and imported from Italy',
       price: 599.99,
-      imageUrl: 'assets/images/category2.jpg',
+      imageUrl: 'assets/images/category3.jpg',
     ),
     Product(
-      name: 'Cereal',
-      description: 'Fresh cereal well packaged',
+      name: 'Arm warmers',
+      description: ' well packaged for winter',
       price: 999.99,
       imageUrl: 'assets/images/category2.jpg',
     ),
+    
     Product(
-      name: 'Smartphone',
-      description: 'Latest smartphone model',
+      name: 'Headphone covers',
+      description: 'High-perfomance headphones covers',
       price: 599.99,
       imageUrl: 'assets/images/category2.jpg',
     ),
     Product(
-      name: 'Laptop',
-      description: 'High-performance laptop',
-      price: 999.99,
-      imageUrl: 'assets/images/category2.jpg',
-    ),
-    Product(
-      name: 'Headphones',
-      description: 'High-perfomance headphones',
-      price: 599.99,
-      imageUrl: 'assets/images/category2.jpg',
-    ),
-    Product(
-      name: 'Ipad',
+      name: 'Ipad pouch',
       description: 'Latest portable Ipad',
       price: 999.99,
       imageUrl: 'assets/images/category2.jpg',
     ),
     Product(
-      name: 'Jeans',
-      description: 'Most trendy jeans',
+      name: ' mesh',
+      description: 'Most trendy mesh styles',
       price: 599.99,
       imageUrl: 'assets/images/category2.jpg',
     ),
     Product(
       name: 'Skirts',
-      description: 'Short linen skirts',
+      description: 'Short  skirts',
       price: 999.99,
       imageUrl: 'assets/images/category2.jpg',
     ),
@@ -89,23 +78,23 @@ class _HomePageState extends State<HomePage> {
     // Add more products as needed
   ];
 
-  // the categories and ther products added
+  // the categories 
   final List<Category> categories = [
     Category(
-      title: 'Electronics',
-      description: 'Explore the latest gadgets and electronics.',
+      title: 'Head covers',
+      description: 'Explore the latest.',
       imageUrl:
           'assets/images/category1.jpg', // Add your image file to the assets folder
     ),
     Category(
-      title: 'Clothing',
+      title: 'Skirts and undies',
       description: 'Discover trendy and fashionable clothing styles.',
       imageUrl:
           'assets/images/category2.jpg', // Add your image file to the assets folder
     ),
     Category(
-      title: 'Groceries',
-      description: 'Shop all groceries for your kitchen. ',
+      title: 'Shawls and wraps',
+      description: 'Shop all for your closet. ',
       imageUrl:
           'assets/images/category3.jpg', // Add your image file to the assets folder
     ),
@@ -116,7 +105,7 @@ class _HomePageState extends State<HomePage> {
           'assets/images/category4.jpg', // Add your image file to the assets folder
     ),
     Category(
-      title: 'Drinks',
+      title: 'Tops',
       description: 'Discover trendy and fashionable clothing styles.',
       imageUrl:
           'assets/images/category5.jpg', // Add your image file to the assets folder
@@ -255,16 +244,16 @@ class _HomePageState extends State<HomePage> {
       ),
 
 //body of homepage starts here
-//code one
 
       body: SingleChildScrollView(
         child: Column(
           children: [
             // Carousel Section
-            Container(
+            SizedBox(
               height: 200,
-              child: MyCarousel(), // Add your carousel widget here
+              child: MyCarousel(), // carousel widget here
             ),
+
             // Categories Section
             Container(
               padding: const EdgeInsets.all(16),
@@ -284,6 +273,10 @@ class _HomePageState extends State<HomePage> {
                                 padding: const EdgeInsets.only(right: 16),
                                 child: Chip(
                                   label: Text(category.title),
+                              //     onTap: () {
+                              //   // Handle product tap
+                              //   _addToCart(product);
+                              // },
                                 ),
                               ))
                           .toList(),
@@ -292,7 +285,8 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            // Product List Section
+
+            // Product List Section Tap to add to cart
             Container(
               padding: const EdgeInsets.all(16),
               child: Column(
@@ -323,7 +317,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: const Color.fromARGB(255, 199, 234, 251),
     );
   }
 
